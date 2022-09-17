@@ -10,9 +10,8 @@ const SubPageList = ({ pages }) => {
     const page = pageData.map(elm => {
         return <Col key={elm.id} md={6}>
             <div style={{ padding: 30 }}>
-                <Link href={`/page/${elm.id}`}>
+                <Link href={`/subpage/${elm.id}`}>
                     <a style={{
-                        textDecoration: 'underline',
                         color: 'black',
                         fontSize: 30
                     }}>

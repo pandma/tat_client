@@ -27,13 +27,11 @@ function SideNav() {
                                     width={50}
                                     height={50}
                                 />
-
                             </div>
 
                             <p style={{
                                 paddingTop: "2%"
                             }}>Organízate</p>
-
                         </div>
 
                     </Navbar.Brand>

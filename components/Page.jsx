@@ -1,14 +1,13 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import SubPageList from './SubPageList';
+import Image from 'next/image';
 
 const Page = ({ page, subPage }) => {
+
     return <Container fluid>
         <Row style={{
             minHeight: "40vh",
             backgroundImage: `url(${page.big_image})`,
-            // width: 400px;
-            // height: 600px;
-            // background-image: url(${props => props.desktopimg}); no-repeat;
             backgroundSize: "cover",
             backgroundPosition: "center",
             marginTop: "-16px"
@@ -30,21 +29,33 @@ const Page = ({ page, subPage }) => {
                     <h1>{page.title}</h1>
                 </div>
             </Col>
-
         </Row>
+
+        <Row style={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "center"
+        }}>
+            <Col className='center-block' md={{ span: 4, offset: 3 }} style={{
+                marginTop: "-2%",
+            }}>
+                <Image
+                    src={page.small_image}
+                    alt="Picture of the author"
+                    width={100}
+                    height={100}
+                />
+            </Col>
+        </Row>
+
         <Row>
             <Col md={{ span: 4, offset: 4 }}>
-
                 <div style={{
-                    paddingTop: "10%",
-                    paddingLeft: "8%",
+                    marginTop: "4%",
+                    textAlign: "center"
                 }}>
                     <h2>Páginas</h2>
-                    <div style={{
-                        maxWidth: "500px"
-                    }}>
-                        <hr />
-                    </div>
+                    <hr />
                 </div>
                 <div>
                     <SubPageList pages={subPage} />

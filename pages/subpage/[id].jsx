@@ -1,6 +1,6 @@
-import pageService from "../api/service/page.service";
 import { useRouter } from "next/router";
 import SubPage from "../../components/Page";
+import subPageService from "../api/service/subPage.service";
 
 const MainSubPage = ({ page }) => {
     const { query } = useRouter();
@@ -15,7 +15,7 @@ const MainSubPage = ({ page }) => {
 
 export async function getServerSideProps({ query }) {
     // Fetch data from external API
-    const dta = await pageService.newPageById(query.id);
+    const dta = await subPageService.newPageById(query.id);
     const page = dta.data.data;
 
     // Pass data to the page via props
